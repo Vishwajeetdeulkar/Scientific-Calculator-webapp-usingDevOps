@@ -1,9 +1,4 @@
 pipeline {
-    /* The environment specifies the credentials required to push my image to dockerhub */
-    environment {
-        github-credentail : 'gitcred'
-    }
-
     agent any
 
     stages {
@@ -11,7 +6,7 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 			git url: 'https://github.com/Vishwajeetdeulkar/Scientific-Calculator-Webapp-using-devops.git', branch: 'master',
-                 credentialsId: github-credentail
+                 credentialsId: 'gitcred'
             }
         }
 
