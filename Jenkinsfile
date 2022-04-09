@@ -12,7 +12,7 @@ pipeline {
         stage('stage 1 Git') {
             steps {
                 // Get some code from a GitHub repository
-                			git url: 'https://github.com/Vishwajeetdeulkar/Scientific-Calculator-Webapp-using-devops.git', branch: 'master',
+                			git url: 'https://github.com/Vishwajeetdeulkar/Scientific-Calculator-webapp-usingDevOps.git/', branch: 'master',
                  credentialsId: 'gitcred'
             }
         }
