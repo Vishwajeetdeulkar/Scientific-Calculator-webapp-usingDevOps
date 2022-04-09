@@ -4,7 +4,7 @@
   tasks:
     - name: web container
       docker_container:
-        name: testcalci
+        name: scientifiCal
         image: vishwajeet1321/scientific-calculator-webapp-devops
         state: started
         ports:
