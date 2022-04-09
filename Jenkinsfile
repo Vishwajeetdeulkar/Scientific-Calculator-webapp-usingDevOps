@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage('step 5 Push docker image to dockerhub') {
+        stage('stage 5 Push docker image to dockerhub') {
             steps{
                 script {
                     docker.withRegistry( '', registryCredential ) {
@@ -44,6 +44,12 @@ pipeline {
                     }
                 }
             }
+        }
+        stage('Stage 6 Ansible image deploy'){
+            steps{
+                  ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'ansible-docker-deploy/inventory', playbook: 'ansible-docker-deploy/deploy-image.yml', sudoUser: null
+                 }
+
         }
 
 
