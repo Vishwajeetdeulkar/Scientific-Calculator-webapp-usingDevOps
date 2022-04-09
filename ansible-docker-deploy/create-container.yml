@@ -1,0 +1,13 @@
+---
+- name: Create Container of app
+  hosts: all
+  tasks:
+    - name: web container
+      docker_container:
+        name: testcalci
+        image: vishwajeet1321/scientific-calculator-webapp-devops
+        state: started
+        ports:
+          - "8085:8085"
+        tty: true
+        detach: true
