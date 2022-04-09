@@ -1,4 +1,11 @@
 pipeline {
+
+    /* The environment specifies the credentials required to push my image to dockerhub */
+    environment {
+        registry = "vishwajeet1321/scientific-calculator-webapp-devops"
+        registryCredential = 'docker-cred'
+        dockerImage = ''
+    }
     agent any
 
     stages {
@@ -20,6 +27,13 @@ pipeline {
             steps {
                 // Unit testing on compiled source code.
                 sh "mvn test"
+            }
+        }
+        stage('stage 4 Building docker image') {
+            steps{
+                script {
+                    dockerImage = docker.build registry + ":latest"
+                }
             }
         }
 
