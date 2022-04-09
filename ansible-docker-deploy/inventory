@@ -1,2 +1,1 @@
-[ubuntu18]
-172.16.134.44 ansible_user=vishwa
+localhost ansible_ssh_pass=1997 ansible_ssh_user=vishwa
