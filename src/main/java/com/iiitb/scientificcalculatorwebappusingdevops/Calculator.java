@@ -26,5 +26,29 @@ public class Calculator {
         logger.info("[RESULT - SQUAREROOT] - " + res);
         return res  ;
     }
+    @RequestMapping(value = "/log",method = RequestMethod.POST)
+    public double log(@RequestBody Map<String,Object> payload){
+        double res;
+        double input1 = Double.parseDouble((String) payload.get("input1"));
+        res = Math.log(input1);
+        res = (double) (Math.round(res*1000.0)/1000.0);
+        return res  ;
+    }
 
+    @RequestMapping(value = "/fact",method = RequestMethod.POST)
+    public double fact(@RequestBody Map<String,Object> payload){
+        double res= 1;
+        double input1 = Double.parseDouble((String) payload.get("input1"));
+        for(double i=1;i<=input1;i++)
+            res = res*i;
+        return res;
+    }
+    @RequestMapping(value = "/power",method = RequestMethod.POST)
+    public double power(@RequestBody Map<String,Object> payload){
+        double res;
+        double input1 = Double.parseDouble((String) payload.get("input1"));
+        double input2 = Double.parseDouble((String) payload.get("input2"));
+        res = Math.pow(input1,input2);
+        return res  ;
+    }
 }
