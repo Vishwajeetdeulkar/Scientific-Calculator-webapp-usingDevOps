@@ -31,7 +31,7 @@ public class Calculator {
         double res;
         double input1 = Double.parseDouble((String) payload.get("input1"));
         res = Math.log(input1);
-
+        res = (double) (Math.round(res*1000.0)/1000.0);
         return res  ;
     }
 
