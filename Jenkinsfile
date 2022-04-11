@@ -51,6 +51,12 @@ pipeline {
                                  }
 
                         }
+                        stage('Step 7 Ansible container creation'){
+                            steps{
+                                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'ansible-deploy/inventory', playbook: 'ansible-deploy/create-container.yml', sudoUser: null
+                                }
+
+                        }
 
     }
 

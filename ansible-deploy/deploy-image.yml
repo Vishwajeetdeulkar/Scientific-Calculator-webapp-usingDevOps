@@ -1,7 +1,6 @@
 ---
-- hosts: all
-  become: true
-
+- name: Pull docker image of app
+  hosts: all
   tasks:
     - name: stop previous version docker
       shell: docker stop vishwajeet1321/scientific-calculator-webapp-devops
@@ -10,5 +9,7 @@
     - name: remove docker images
       shell: docker image rm -f vishwajeet1321/scientific-calculator-webapp-devops:latest
 
-    - name: create docker image
-      shell: docker run -d -p 8085:8085 --name sci-cal vishwajeet1321/scientific-calculator-webapp-devops:latest
+    - name: Pull app devops image
+      docker_image:
+        name: vishwajeet1321/scientific-calculator-webapp-devops
+        source: pull
