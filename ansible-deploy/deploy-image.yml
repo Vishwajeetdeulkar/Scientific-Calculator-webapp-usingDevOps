@@ -3,11 +3,11 @@
   hosts: all
   tasks:
     - name: stop previous version docker
-      shell: [ "$(docker ps -a | grep scientifiCal)" ] && docker stop scientifiCal
+      shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker stop scientifiCal; fi
     - name: remove stopped container
-      shell: [ "$(docker ps -a | grep scientifiCal)" ] && docker rm -f scientifiCal
+      shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker rm -f scientifiCal; fi
     - name: remove docker images
-      shell: [ "$(docker ps -a | grep vishwajeet1321/scientific-calculator-webapp-devops)" ] && docker image rm -f vishwajeet1321/scientific-calculator-webapp-devops:latest
+      shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker image rm -f vishwajeet1321/scientific-calculator-webapp-devops:latest
 
     - name: Pull app devops image
       docker_image:
