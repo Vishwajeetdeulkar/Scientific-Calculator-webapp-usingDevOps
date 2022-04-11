@@ -3,9 +3,9 @@
   hosts: all
   tasks:
     - name: remove stopped container
-      shell: docker rm -vf $(docker ps -aq)
+      shell: docker rm -vf $(docker ps -aq) || true
     - name: remove docker images
-      shell: docker rmi -f $(docker images -aq)
+      shell: docker rmi -f $(docker images -aq) || true
 
     - name: Pull app devops image
       docker_image:
