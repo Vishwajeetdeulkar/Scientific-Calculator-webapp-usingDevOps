@@ -2,10 +2,8 @@
 - name: Pull docker image of app
   hosts: all
   tasks:
-    - name: stop previous version docker
-      shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker stop scientifiCal; fi
     - name: remove stopped container
-      shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker rm -f scientifiCal; fi
+      shell: docker rm -vf $(docker ps -aq)
     - name: remove docker images
       shell: docker rmi -f $(docker images -aq)
 
