@@ -7,7 +7,7 @@
     - name: remove stopped container
       shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker rm -f scientifiCal; fi
     - name: remove docker images
-      shell: if [ $( docker ps -a -f name=scientifiCal | wc -l ) -eq 2 ]; then docker image rm -f vishwajeet1321/scientific-calculator-webapp-devops:latest;fi
+      shell: if [[ "$(docker images -q vishwajeet1321/scientific-calculator-webapp-devops:latest 2> /dev/null)"  ]]; then docker rmi vishwajeet1321/scientific-calculator-webapp-devops:latest ; fi
 
     - name: Pull app devops image
       docker_image:
