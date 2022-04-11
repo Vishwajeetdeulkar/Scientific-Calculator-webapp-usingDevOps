@@ -3,9 +3,9 @@
   hosts: all
   tasks:
     - name: stop previous version docker
-      shell: [ "$(docker ps -a | grep scientifiCal)" ] && docker stop vishwajeet1321/scientific-calculator-webapp-devops
+      shell: [ "$(docker ps -a | grep scientifiCal)" ] && docker stop scientifiCal
     - name: remove stopped container
-      shell: [ "$(docker ps -a | grep scientifiCal)" ] && docker rm -f vishwajeet1321/scientific-calculator-webapp-devops
+      shell: [ "$(docker ps -a | grep scientifiCal)" ] && docker rm -f scientifiCal
     - name: remove docker images
       shell: [ "$(docker ps -a | grep vishwajeet1321/scientific-calculator-webapp-devops)" ] && docker image rm -f vishwajeet1321/scientific-calculator-webapp-devops:latest
 
