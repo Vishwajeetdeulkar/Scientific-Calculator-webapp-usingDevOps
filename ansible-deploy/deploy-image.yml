@@ -11,9 +11,5 @@
       docker_image:
         name: vishwajeet1321/scientific-calculator-webapp-devops
         source: pull
-
-    - name: Create Container of app
-      hosts: all
-      tasks:
-        - name: web container
-          shell: docker run -d -p 8085:8085 --name calculator vishwajeet1321/scientific-calculator-webapp-devops:latest
+    - name: create web container
+      shell: docker run -d -p 8085:8085 --name calculator vishwajeet1321/scientific-calculator-webapp-devops:latest
