@@ -20,10 +20,10 @@ public class Calculator {
     public double sqrt(@RequestBody Map<String,Object> payload){
         double res;
         double input1 = Double.parseDouble((String) payload.get("input1"));
-        logger.info("[SQUAREROOT] - " + input1);
+        logger.info("SQUARE_ROOT - Input:" + input1);
 
         res = Math.sqrt(input1);
-        logger.info("[RESULT - SQUAREROOT] - " + res);
+        logger.info(" - Output:" + res);
         return res  ;
     }
     @RequestMapping(value = "/log",method = RequestMethod.POST)

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd/MMM/yyyy:HH:mm:ss SS} [%F] [%level] %logger{36} %msg%n"/>
+        </Console>
+        <File name="FileAppender" fileName="Calculator.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{dd/MMM/yyyy:HH:mm:ss SS} [%F] [%level] %logger{36} %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="Calculator" level="INFO">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
+
+        </Root>
+    </Loggers>
+</Configuration>
