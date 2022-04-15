@@ -111,7 +111,7 @@
     }
     async function log() {
         const Input1 = document.getElementById("num1").value;
-        fetch('http://172.16.134.244:8085/log', {
+        fetch('http://localhost:8085/log', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -126,7 +126,7 @@
     }
     async function fact() {
         const Input1 = document.getElementById("num1").value;
-        fetch('http://172.16.134.244:8085/fact', {
+        fetch('http://localhost:8085/fact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'

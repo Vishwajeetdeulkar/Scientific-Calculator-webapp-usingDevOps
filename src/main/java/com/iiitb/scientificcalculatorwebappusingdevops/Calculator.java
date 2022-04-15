@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 public class Calculator {
-    private static final Logger logger = LogManager.getLogger(Calculator.class);
+    private static final Logger logger = LogManager.getLogger("Calculator");
 
     @RequestMapping(value = "/sqrt",method = RequestMethod.POST)
     public double sqrt(@RequestBody Map<String,Object> payload){
@@ -30,6 +30,7 @@ public class Calculator {
         double input1 = Double.parseDouble((String) payload.get("input1"));
         res = Math.log(input1);
         res = (double) (Math.round(res*1000.0)/1000.0);
+        logger.info("Logarithm - Input:" + input1 + " - Output:" + res);
         return res  ;
     }
 
@@ -39,6 +40,7 @@ public class Calculator {
         double input1 = Double.parseDouble((String) payload.get("input1"));
         for(double i=1;i<=input1;i++)
             res = res*i;
+        logger.info("Factorial - Input:" + input1 + " - Output:" + res);
         return res;
     }
     @RequestMapping(value = "/power",method = RequestMethod.POST)
@@ -47,6 +49,7 @@ public class Calculator {
         double input1 = Double.parseDouble((String) payload.get("input1"));
         double input2 = Double.parseDouble((String) payload.get("input2"));
         res = Math.pow(input1,input2);
+        logger.info("Power - Input:" + input1 + "^" + input2 + " - Output:" + res);
         return res  ;
     }
 }
