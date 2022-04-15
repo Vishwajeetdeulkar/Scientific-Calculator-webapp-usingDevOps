@@ -2,16 +2,19 @@
 <Configuration status="INFO">
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{dd/MMM/yyy:HH:mm:ss SSS} [%F] [%level] %logger{36} %msg%n"/>
+            <PatternLayout pattern="%d{dd/MMM/yyyy:HH:mm:ss SS} [%F] [%level] %logger{36} %msg%n"/>
         </Console>
-        <File name="FileAppender" fileName="scientific_Cal.log" immediateFlush="false" append="true">
-            <PatternLayout pattern="%d{dd/MMM/yyy:HH:mm:ss SSS} [%F] [%level] %logger{36} %msg%n"/>
+        <File name="FileAppender" fileName="Calculator.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="%d{dd/MMM/yyyy:HH:mm:ss SS} [%F] [%level] %logger{36} %msg%n"/>
         </File>
     </Appenders>
     <Loggers>
-        <Root level="debug">
-            <AppenderRef ref="ConsoleAppender"/>
+        <Logger name="CalController" level="INFO">
             <AppenderRef ref="FileAppender"/>
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
+
         </Root>
     </Loggers>
 </Configuration>
