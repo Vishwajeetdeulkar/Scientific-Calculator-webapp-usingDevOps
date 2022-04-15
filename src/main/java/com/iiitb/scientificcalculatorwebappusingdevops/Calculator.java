@@ -14,16 +14,14 @@ import java.util.Map;
 
 @RestController
 public class Calculator {
-    private static final Logger logger = LogManager.getLogger("Calculator");
+    private static final Logger logger = LogManager.getLogger(Calculator.class);
 
     @RequestMapping(value = "/sqrt",method = RequestMethod.POST)
     public double sqrt(@RequestBody Map<String,Object> payload){
         double res;
         double input1 = Double.parseDouble((String) payload.get("input1"));
-        logger.info("SQUARE_ROOT - Input:" + input1);
-
         res = Math.sqrt(input1);
-        logger.info(" - Output:" + res);
+        logger.info("SQUARE_ROOT - Input:" + input1 + " - Output:" + res);
         return res  ;
     }
     @RequestMapping(value = "/log",method = RequestMethod.POST)
