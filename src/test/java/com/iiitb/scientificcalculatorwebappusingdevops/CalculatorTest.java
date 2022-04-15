@@ -60,29 +60,31 @@ public class CalculatorTest {
     }
 
 
-//    @Test
-//    public void powerTruePositive(){
-//        Map<String,Object> payload = new HashMap();
-//        payload.put("input1",(Object) new String("36"));
-//
-//        Map<String,Object> payload2 = new HashMap();
-//        payload2.put("input1",(Object) new String( "12.25"));
-//
-//        assertEquals("Squaring a number for True Positive", 6, calculator.power(payload), DELTA);
-//        assertEquals("Squaring a number for True Positive", 3.5, calculator.power(payload2), DELTA);
-//
-//    }
-//
-//    @Test
-//    public void powerFalsePositive(){
-//        Map<String,Object> payload = new HashMap();
-//        payload.put("input1",(Object) new String("36"));
-//
-//        Map<String,Object> payload2 = new HashMap();
-//        payload2.put("input1",(Object) new String( "12.25"));
-//        assertNotEquals("Squaring a number for False Positive", 10, calculator.power(payload), DELTA);
-//        assertNotEquals("Squaring a number for False Positive", 2.5, calculator.power(payload2), DELTA);
-//    }
+    @Test
+    public void powerTruePositive(){
+        Map<String,Object> payload = new HashMap();
+        payload.put("input1",(Object) new String("2"));
+        payload.put("input2",(Object) new String("3"));
+        Map<String,Object> payload2 = new HashMap();
+        payload2.put("input1",(Object) new String( "4"));
+        payload2.put("input2",(Object) new String( "3"));
+
+        assertEquals("Squaring a number for True Positive", 8, calculator.power(payload), DELTA);
+        assertEquals("Squaring a number for True Positive", 64, calculator.power(payload2), DELTA);
+
+    }
+
+    @Test
+    public void powerFalsePositive(){
+        Map<String,Object> payload = new HashMap();
+        payload.put("input1",(Object) new String("2"));
+        payload.put("input2",(Object) new String("3"));
+        Map<String,Object> payload2 = new HashMap();
+        payload2.put("input1",(Object) new String( "4"));
+        payload2.put("input2",(Object) new String( "3"));
+        assertNotEquals("Squaring a number for False Positive", 10, calculator.power(payload), DELTA);
+        assertNotEquals("Squaring a number for False Positive", 2.5, calculator.power(payload2), DELTA);
+    }
     @Test
     public void factorialTruePositive(){
         Map<String,Object> payload = new HashMap();

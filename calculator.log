@@ -1,0 +1,8 @@
+2022-04-15 21:37:12,686 INFO Calculator [http-nio-8085-exec-7] SQUARE_ROOT - Input:5.0 - Output:2.23606797749979
+2022-04-15 21:37:15,088 INFO Calculator [http-nio-8085-exec-8] Power - Input:5.0^4.0 - Output:625.0
+2022-04-15 21:37:15,601 INFO Calculator [http-nio-8085-exec-9] SQUARE_ROOT - Input:5.0 - Output:2.23606797749979
+2022-04-15 21:37:16,027 INFO Calculator [http-nio-8085-exec-10] Power - Input:5.0^4.0 - Output:625.0
+2022-04-15 21:37:16,428 INFO Calculator [http-nio-8085-exec-1] SQUARE_ROOT - Input:5.0 - Output:2.23606797749979
+2022-04-15 21:37:16,866 INFO Calculator [http-nio-8085-exec-2] Power - Input:5.0^4.0 - Output:625.0
+2022-04-15 21:37:17,298 INFO Calculator [http-nio-8085-exec-3] SQUARE_ROOT - Input:5.0 - Output:2.23606797749979
+2022-04-15 21:37:17,720 INFO Calculator [http-nio-8085-exec-4] Power - Input:5.0^4.0 - Output:625.0
