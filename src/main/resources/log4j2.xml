@@ -9,12 +9,12 @@
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="Calculator" level="INFO">
-            <AppenderRef ref="FileAppender"/>
-        </Logger>
+<!--        <Logger name="Calculator" level="INFO">-->
+<!--            -->
+<!--        </Logger>-->
         <Root level="info">
             <AppenderRef ref="ConsoleAppender"/>
-
+            <AppenderRef ref="FileAppender"/>
         </Root>
     </Loggers>
 </Configuration>
