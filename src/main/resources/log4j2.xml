@@ -2,10 +2,10 @@
 <Configuration status="INFO">
     <Appenders>
         <Console name="LogToConsole" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss XX} [%F] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss XXX} [%F] %-5level %logger{36} - %msg%n"/>
         </Console>
         <File name="LogToFile" fileName="calculator.log">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss XX} [%F] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss XXX} [%F] %-5level %logger{36} - %msg%n"/>
         </File>
     </Appenders>
     <Loggers>
