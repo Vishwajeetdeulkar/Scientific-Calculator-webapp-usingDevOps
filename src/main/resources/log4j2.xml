@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
     <Appenders>
-        <Console name="LogToConsole" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{dd/MMM/yyyy:HH:mm:ss XXX} [%F] [%level] %logger{36} %msg%n"/>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%F] [%level] %logger{36} %msg%n"/>
         </Console>
-        <File name="LogToFile" fileName="calculator.log">
-            <PatternLayout pattern="%d{dd/MMM/yyyy:HH:mm:ss XXX} [%F] [%level] %logger{36} %msg%n"/>
+        <File name="FileAppender" fileName="Calculator.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%F] [%level] %logger{36} %msg%n"/>
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="Calculator" level="debug" additivity="false">
-            <AppenderRef ref="LogToFile"/>
+        <Logger name="Calculator" level="INFO">
+            <AppenderRef ref="FileAppender"/>
         </Logger>
-        <Logger name="org.springframework.boot" level="error" additivity="false">
-            <AppenderRef ref="LogToConsole"/>
-        </Logger>
-        <Root level="error">
-            <AppenderRef ref="LogToConsole"/>
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender"/>
+
         </Root>
     </Loggers>
 </Configuration>
