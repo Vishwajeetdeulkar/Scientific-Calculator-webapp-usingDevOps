@@ -19,3 +19,6 @@ Technology stack mention in below table
 | Delivery     | Docker, Docker Hub, Jenkins  |
 | Deployment  | Docker, Ansible, Jenkins  |
 | Monitoring     | ELK stack  |
+
+
+Do refer a report file report.pdf to get workflow idea.
