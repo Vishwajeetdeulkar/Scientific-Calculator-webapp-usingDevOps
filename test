@@ -1,3 +1,8 @@
 test 
 test
 test3
+
+%{TIMESTAMP_ISO8601:timestamp} \[.*?\] \[%{LOGLEVEL:level}\] %{GREEDYDATA:logger} %{GREEDYDATA:action} \- %{GREEDYDATA:input} \- %{GREEDYDATA:output}
+
+
+test commit
